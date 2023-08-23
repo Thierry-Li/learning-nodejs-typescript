@@ -10,5 +10,10 @@
   "env": {
     "node": true // Enabling Node.js global variables
   },
-  "rules": {}
+  "plugins": [
+    "prettier"
+  ],
+  "rules": {
+    "prettier/prettier": "error"
+  }
 }
