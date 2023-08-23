@@ -2,35 +2,76 @@
   "name": "nodejs-typescript",
   "version": "1.0.0",
   "main": "index.js",
-  "license": "MIT",
+  "author": "Thierry Li",
+  "description": "Learning repository of NodeJS",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Thierry-Li/learning-nodejs-typescript"
+  },
+  "license": "ISC",
   "engines": {
     "node": ">=16.0.0"
   },
   "scripts": {
     "dev": "ts-node-dev --respawn src/server.ts",
     "build": "tsc",
+    "commit": "git-cz",
     "lint": "eslint src/**/*.ts",
     "format": "eslint src/**/*.ts --fix",
-    "prettier": "prettier --write \"src/**/*.ts\""
+    "prettier": "prettier --write \"src/**/*.ts\"",
+    "release": "standard-version",
+    "prepare": "husky install"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.7.1",
+    "@commitlint/config-conventional": "^17.7.0",
     "@tsconfig/node18": "^18.2.0",
     "@types/node": "^20.5.1",
     "@typescript-eslint/eslint-plugin": "^6.4.0",
     "@typescript-eslint/parser": "^6.4.0",
     "eslint": "^8.47.0",
     "eslint-plugin-prettier": "^5.0.0",
+    "git-cz": "^4.9.0",
     "husky": "^8.0.3",
+    "lint-staged": "^14.0.1",
     "prettier": "^3.0.2",
+    "standard-version": "^9.5.0",
     "ts-node-dev": "^2.0.0",
-    "typescript": "^5.1.6"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn lint"
-    }
+    "typescript": "^5.1.6",
+    "yarn-deduplicate": "^6.0.2"
   },
   "dependencies": {
     "http-status-codes": "^2.2.0"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "lint-staged": {
+    "*.{css,html,js,jsx,json,md}": "prettier --write",
+    "yarn.lock": "yarn-deduplicate yarn.lock",
+    "*.{js,jsx}": [
+      "eslint --max-warnings=5 .",
+      "eslint --fix",
+      "eslint --cache ."
+    ]
+  },
+  "eslintIgnore": [
+    "_templates",
+    "build",
+    "storybook-static",
+    "coverage",
+    "/.storybook/main.js",
+    "/.storybook/preview-head.html",
+    "/.storybook/preview.js",
+    "!.*/**",
+    "dist",
+    "node_modules"
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn commit"
+    }
   }
 }
