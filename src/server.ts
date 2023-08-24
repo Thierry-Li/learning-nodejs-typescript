@@ -2,6 +2,17 @@ import http, { IncomingMessage, ServerResponse } from 'http';
 import fs from 'fs';
 import { StatusCodes } from 'http-status-codes';
 import { URL } from 'url';
+import express from 'express';
+import cors from 'cors';
+import bodyParser from 'body-parser';
+import { myLogger } from './middlewares/logger/logger';
+
+const app = express();
+
+// Middleware setup
+app.use(bodyParser.json());
+app.use(cors());
+app.use(myLogger);
 
 const getViewUrl = (url: string) => {
   return `views${url}.html`;
