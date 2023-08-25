@@ -1,6 +1,6 @@
 {
   "name": "nodejs-typescript",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "main": "index.js",
   "author": "Thierry Li",
   "description": "Learning repository of NodeJS",
@@ -20,6 +20,9 @@
     "format": "eslint src/**/*.ts --fix",
     "prettier": "prettier --write \"src/**/*.ts\"",
     "release": "standard-version",
+    "release-major": "standard-version -- --release-as major",
+    "release-minor": "standard-version -- --release-as minor",
+    "release-patch": "standard-version -- --release-as patch",
     "prepare": "husky install"
   },
   "devDependencies": {
