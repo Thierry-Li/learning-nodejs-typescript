@@ -23,17 +23,28 @@
           <%= name %>
         </h3>
 
-        <p>articles list : </p>
-        <% if (articles.length> 0) { %>
-          <% articles.forEach(article=> {%>
-            <h3 class="title">
-              <%= article.title %>
-            </h3>
-            <p class="snippet">
-              <%= article.content %>
-            </p>
+        <h4>Blogs list : </h4>
+        <% if (blogs.length > 0) { %>
+          <% blogs.forEach(blog=> {%>
+            <a href="/blogs/<%= blog._id %>" class="single">
+
+              <h3 class="title">
+                <%= blog.title %>
+              </h3>
+              <h4 class="title">
+                <%= blog._id %>
+              </h4>
+              <p class="snippet">
+                <%= blog.snippet %>
+              </p>
+              <p class="body">
+                <%= blog.body %>
+              </p>
+            </a>
             <% }) %>
-              <% } %>
+        <% } else { %>
+          <p>There are no blogs to display...</p>
+        <% }%>
       </div>
     </main>
 
