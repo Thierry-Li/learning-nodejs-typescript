@@ -5,12 +5,15 @@ import { Logger } from './middlewares';
 import path from 'path';
 import morgan from 'morgan';
 import mongoose from 'mongoose';
-import Blog from './models/blogs';
+import blogRoutes from './routes/blogRoutes';
+import 'dotenv/config';
+import favicon from 'serve-favicon';
 
 const app: Application = express();
 
-const dbUri =
-  'mongodb+srv://mongo:7rkIOX9iJmeLcpRZ@mongo-learning.dkyha7g.mongodb.net/nodejs-typescript?retryWrites=true&w=majority';
+app.use(favicon('public/images/favicon.ico'));
+
+const dbUri = process.env.MONGODB_URI || ' ';
 mongoose
   .connect(dbUri)
   .then(() => {
@@ -36,67 +39,17 @@ app.use(express.static(`public`));
 
 app.get('/', (req: Request, res: Response): void => {
   res.redirect('/blogs');
-
-  // res.render('index', { title: 'Home', name: req.query?.name || 'lambda person', articles });
-});
-
-app.get('/blogs', (req: Request, res: Response): void => {
-  Blog.find()
-    .sort({ createdAt: -1 })
-    .then((result) => {
-      res.render('index', { title: 'Home', name: req.query?.name || 'lambda person', blogs: result });
-    })
-    .catch((err) => {
-      console.log('/blogs Get err', err);
-    });
-});
-
-app.post('/blogs', (req: Request, res: Response): void => {
-  // function with app.use(express.urlencoded({ extended: true }));
-  const blog = new Blog(req.body);
-
-  blog
-    .save()
-    .then(() => {
-      res.redirect('/blogs');
-    })
-    .catch((err) => {
-      console.log('/blogs post err', err);
-    });
-});
-
-app.get('/blogs/create', (req: Request, res: Response): void => {
-  // res.redirect('/about');
-  res.render('create', { title: 'Create new article' });
-});
-
-app.get('/blogs/:id', (req: Request, res: Response): void => {
-  Blog.findById(req.params.id)
-    .then((result) => {
-      res.render('details', { title: 'Blog detail', blog: result });
-    })
-    .catch((err) => {
-      console.log('/blogs/:id err', err);
-    });
-});
-
-app.delete('/blogs/:id', (req: Request, res: Response): void => {
-  const { id } = req.params;
-
-  Blog.findByIdAndDelete(id)
-    .then(() => {
-      res.json({ redirect: '/blogs' });
-    })
-    .catch((err) => {
-      console.log('/blogs/:id  delete err', err);
-    });
 });
 
 app.get('/about', (req: Request, res: Response): void => {
   res.render('about', { title: 'About' });
 });
 
+// Blog routes
+app.use('/blogs', blogRoutes);
+
+// 404 page
 app.use((req: Request, res: Response): void => {
   // res.status(404).sendFile(`./views/html/404.html`, { root: __dirname });
-  res.render('404', { title: 'Oopsie' });
+  res.status(404).render('404', { title: 'Oopsie' });
 });
