@@ -266,3 +266,8 @@ dist
 # Stores VSCode versions used for testing VSCode extensions
 .vscode-test
 
+
+.env*
+.flaskenv*
+!.env.project
+!.env.vault

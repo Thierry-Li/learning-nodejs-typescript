@@ -3,7 +3,7 @@
   "compilerOptions": {
     "outDir": "dist",
     "target": "es5",
-    "module": "commonjs",
+    "module": "CommonJS",
     "sourceMap": true
   },
   "include": ["src/**/*"],
