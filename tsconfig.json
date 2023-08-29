@@ -9,7 +9,6 @@
     "lib": ["ES2022"],
     "allowJs": true,
     "skipLibCheck": true,
-    // "useDefineForClassFields": true,
     "allowSyntheticDefaultImports": true,
     "strict": false,
     "forceConsistentCasingInFileNames": true,
@@ -17,9 +16,16 @@
     "isolatedModules": false,
     "sourceMap": true
   },
-  "ts-node": {
+  "ts-node-dev": {
     "esm": true,
     "experimentalSpecifierResolution": "node"
+  },
+  "ts-node": {
+    "esm": true,
+    "experimentalSpecifierResolution": "node",
+    "compilerOptions": {
+      "module": "commonjs"
+    }
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules"]
