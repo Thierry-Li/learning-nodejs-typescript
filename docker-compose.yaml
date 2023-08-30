@@ -3,6 +3,7 @@ services:
   nodejs-ts-docker:
     container_name: nodejs-ts-docker
     restart: always
+    image: fazjaune/nodejs-typescript-docker:latest
     build:
       context: .
       dockerfile: Dockerfile
