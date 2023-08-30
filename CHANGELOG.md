@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.0.0](https://github.com/Thierry-Li/learning-nodejs-typescript/compare/v2.0.0...v3.0.0) (2023-08-30)
+
+### Features
+
+- 🎸 dockerized ([4a8eb16](https://github.com/Thierry-Li/learning-nodejs-typescript/commit/4a8eb160344363e570429e8eb2a5819aa49c49c0))
+
 ## [2.0.0](https://github.com/Thierry-Li/learning-nodejs-typescript/compare/v1.1.1...v2.0.0) (2023-08-25)
 
 ### ⚠ BREAKING CHANGES
