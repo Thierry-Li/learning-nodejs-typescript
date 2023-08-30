@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import Blog from '../models/blogs';
+import { StatusCodes } from 'http-status-codes';
 
 const blog_index = function (req: Request, res: Response): void {
   Blog.find()
@@ -38,7 +39,7 @@ const blog_details = function (req: Request, res: Response): void {
     })
     .catch((err) => {
       console.log('/blogs/:id err', err);
-      res.status(404).render('404', { title: 'Blog not found' });
+      res.status(StatusCodes.NOT_FOUND).render('404', { title: 'Blog not found' });
     });
 };
 

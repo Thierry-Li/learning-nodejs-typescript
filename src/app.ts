@@ -8,6 +8,7 @@ import mongoose from 'mongoose';
 import blogRoutes from './routes/blogRoutes';
 import 'dotenv/config';
 import favicon from 'serve-favicon';
+import { StatusCodes } from 'http-status-codes';
 
 const app: Application = express();
 
@@ -42,7 +43,7 @@ app.get('/', (req: Request, res: Response): void => {
 });
 
 app.get('/about', (req: Request, res: Response): void => {
-  res.render('about', { title: 'About' });
+  res.status(StatusCodes.OK).render('about', { title: 'About' });
 });
 
 // Blog routes
@@ -51,5 +52,5 @@ app.use('/blogs', blogRoutes);
 // 404 page
 app.use((req: Request, res: Response): void => {
   // res.status(404).sendFile(`./views/html/404.html`, { root: __dirname });
-  res.status(404).render('404', { title: 'Oopsie' });
+  res.status(StatusCodes.NOT_FOUND).render('404', { title: 'Oopsie' });
 });
