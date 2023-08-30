@@ -18,7 +18,10 @@
   },
   "ts-node-dev": {
     "esm": true,
-    "experimentalSpecifierResolution": "node"
+    "experimentalSpecifierResolution": "node",
+    "compilerOptions": {
+      "module": "commonjs"
+    }
   },
   "ts-node": {
     "esm": true,

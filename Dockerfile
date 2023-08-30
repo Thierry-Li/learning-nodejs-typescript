@@ -1,5 +1,5 @@
 # Builder
-FROM node:18 AS builder
+FROM node:18-alpine AS builder
 
 WORKDIR /app
 COPY . /app
@@ -9,4 +9,4 @@ RUN yarn install \
 
 EXPOSE 3000
 
-CMD [ "yarn", "dev:docker2" ]
+CMD [ "yarn", "dev" ]
