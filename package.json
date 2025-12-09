@@ -29,7 +29,7 @@
     "audit:fix:force": "npm audit fix --force"
   },
   "devDependencies": {
-    "@commitlint/cli": "^19.5.0",
+    "@commitlint/cli": "^20.2.0",
     "@commitlint/config-conventional": "^19.2.2",
     "@tsconfig/node18": "^18.2.4",
     "@types/cors": "^2.8.17",
