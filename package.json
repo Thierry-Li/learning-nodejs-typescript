@@ -23,25 +23,28 @@
     "release:major": "standard-version --release-as major",
     "release:minor": "standard-version --release-as minor",
     "release:patch": "standard-version --release-as patch",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "audit": "npm audit --audit-level=low",
+    "audit:fix": "npm audit fix",
+    "audit:fix:force": "npm audit fix --force"
   },
   "devDependencies": {
-    "@commitlint/cli": "^19.5.0",
+    "@commitlint/cli": "^20.2.0",
     "@commitlint/config-conventional": "^19.2.2",
     "@tsconfig/node18": "^18.2.4",
     "@types/cors": "^2.8.17",
     "@types/express": "^4.17.21",
     "@types/morgan": "^1.9.9",
-    "@types/node": "^22.5.5",
+    "@types/node": "^24.10.2",
     "@types/serve-favicon": "^2.5.7",
     "@typescript-eslint/eslint-plugin": "^6.21.0",
     "@typescript-eslint/parser": "^6.21.0",
     "eslint": "^8.57.0",
     "eslint-plugin-prettier": "^5.5.4",
     "git-cz": "^4.9.0",
-    "husky": "^9.1.6",
-    "lint-staged": "^15.2.7",
-    "prettier": "^3.3.2",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7",
+    "prettier": "^3.7.4",
     "standard-version": "^9.5.0",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.4.5",
@@ -54,9 +57,9 @@
     "ejs": "^3.1.10",
     "express": "^4.20.0",
     "http-status-codes": "^2.3.0",
-    "mongoose": "^8.9.5",
+    "mongoose": "^9.0.1",
     "morgan": "^1.10.0",
-    "serve-favicon": "^2.5.0"
+    "serve-favicon": "^2.5.1"
   },
   "commitlint": {
     "extends": [
