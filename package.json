@@ -23,7 +23,10 @@
     "release:major": "standard-version --release-as major",
     "release:minor": "standard-version --release-as minor",
     "release:patch": "standard-version --release-as patch",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "audit": "npm audit --audit-level=low",
+    "audit:fix": "npm audit fix",
+    "audit:fix:force": "npm audit fix --force"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.5.0",
