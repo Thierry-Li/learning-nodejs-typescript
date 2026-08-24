@@ -43,7 +43,7 @@
     "eslint-plugin-prettier": "^5.5.5",
     "git-cz": "^4.9.0",
     "husky": "^9.1.7",
-    "lint-staged": "^16.2.7",
+    "lint-staged": "^17.3.0",
     "prettier": "^3.7.4",
     "standard-version": "^9.5.0",
     "ts-node-dev": "^2.0.0",
