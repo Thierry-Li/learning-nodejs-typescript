@@ -47,7 +47,7 @@
     "prettier": "^3.7.4",
     "standard-version": "^9.5.0",
     "ts-node-dev": "^2.0.0",
-    "typescript": "^5.9.3",
+    "typescript": "^7.0.2",
     "yarn-deduplicate": "^6.0.2"
   },
   "dependencies": {
