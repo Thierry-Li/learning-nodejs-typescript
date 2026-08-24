@@ -30,9 +30,9 @@
   },
   "devDependencies": {
     "@commitlint/cli": "^20.3.1",
-    "@commitlint/config-conventional": "^19.2.2",
+    "@commitlint/config-conventional": "^21.2.2",
     "@tsconfig/node18": "^18.2.4",
-    "@types/cors": "^2.8.17",
+    "@types/cors": "^2.8.19",
     "@types/express": "^5.0.6",
     "@types/morgan": "^1.9.9",
     "@types/node": "^24.10.2",
@@ -52,8 +52,8 @@
   },
   "dependencies": {
     "body-parser": "^2.3.0",
-    "cors": "^2.8.5",
     "dotenv": "^17.4.2",
+    "cors": "^2.8.6",
     "ejs": "^4.0.1",
     "express": "^5.1.0",
     "http-status-codes": "^2.3.0",
