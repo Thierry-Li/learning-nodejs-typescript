@@ -44,7 +44,7 @@
     "git-cz": "^4.9.0",
     "husky": "^9.1.7",
     "lint-staged": "^17.6.0",
-    "prettier": "^3.9.6",
+    "prettier": "^3.9.9",
     "standard-version": "^9.5.0",
     "ts-node-dev": "^2.0.0",
     "typescript": "^7.0.2",
