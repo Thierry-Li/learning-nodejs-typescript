@@ -55,7 +55,7 @@
     "dotenv": "^18.0.6",
     "cors": "^2.8.6",
     "ejs": "^7.0.1",
-    "express": "^5.1.0",
+    "express": "^5.3.0",
     "http-status-codes": "^2.3.0",
     "morgan": "^1.12.1",
     "mongoose": "^9.11.1",
