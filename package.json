@@ -51,7 +51,7 @@
     "yarn-deduplicate": "^6.0.2"
   },
   "dependencies": {
-    "body-parser": "^2.3.0",
+    "body-parser": "^2.4.0",
     "dotenv": "^18.0.6",
     "cors": "^2.8.6",
     "ejs": "^7.0.1",
